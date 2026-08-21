@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>굿프랜드유아체육연구소 &amp; 이벤트 — 찾아가는 물놀이 · 에어바운스 · 운동회</title>
+<meta name="description" content="전남 여수·순천·광양 기반 유아체육 이벤트 전문. 찾아가는 여름 물놀이(에어풀장·에어슬라이드), 에어바운스, 운동회·체육대회, 버블쇼까지 직접 설치·진행합니다. 대표 황동훈 010-9436-4769">
+<meta property="og:title" content="굿프랜드유아체육연구소 & 이벤트">
+<meta property="og:description" content="아이들의 밝고 건강한 마음과 즐거움을 책임지는 유아 체육기관. 전국 어디든 찾아갑니다.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/video/hero-poster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gothic+A1:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- 스크롤 진행률 -->
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<!-- 상단 내비 -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top">
+    <span class="nav__mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 16c1.6 0 1.6 1.4 3.2 1.4S6.8 16 8.4 16s1.6 1.4 3.2 1.4S13.2 16 14.8 16s1.6 1.4 3.2 1.4S19.6 16 22 16"/>
+        <path d="M2 20.6c1.6 0 1.6 1.4 3.2 1.4s1.6-1.4 3.2-1.4 1.6 1.4 3.2 1.4 1.6-1.4 3.2-1.4 1.6 1.4 3.2 1.4 1.6-1.4 4-1.4"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+    </span>
+    <span class="nav__name">굿프랜드<em>유아체육연구소 &amp; 이벤트</em></span>
+  </a>
+  <nav class="nav__links" aria-label="주요 메뉴">
+    <a href="#services">프로그램</a>
+    <a href="#water">물놀이</a>
+    <a href="#story">연혁</a>
+    <a href="#area">출장지역</a>
+  </nav>
+  <a class="nav__cta" href="tel:010-9436-4769">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg>
+    <span>010-9436-4769</span>
+  </a>
+</header>
+
+<main id="top">
+
+<!-- ══════════ 1. 히어로 ══════════ -->
+<section class="hero" id="hero">
+  <div class="hero__media">
+    <video id="heroVideo" class="hero__video" autoplay muted loop playsinline preload="metadata" poster="assets/video/hero-poster.jpg" aria-hidden="true">
+      <source src="assets/video/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero__scrim"></div>
+    <div class="hero__caustics" aria-hidden="true"></div>
+  </div>
+
+  <div class="hero__inner">
+    <p class="hero__eyebrow"><span>전남 여수 · 순천 · 광양</span></p>
+    <h1 class="hero__title">
+      <span class="line"><span class="w">물</span><span class="w">놀</span><span class="w">이</span><span class="w gap"></span><span class="w">차</span><span class="w">를</span></span>
+      <span class="line"><span class="w hl">운</span><span class="w hl">동</span><span class="w hl">장</span><span class="w">까</span><span class="w">지</span></span>
+      <span class="line"><span class="w">몰</span><span class="w">고</span><span class="w">갑</span><span class="w">니</span><span class="w">다</span></span>
+    </h1>
+    <p class="hero__sub">
+      <b>에어풀장</b> · <b>에어슬라이드</b> · <b>에어바운스</b> · <b>운동회</b><br>
+      설치부터 회수까지 굿프랜드가 직접 합니다.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--splash" href="tel:010-9436-4769" data-magnet>
+        <span>지금 전화 문의</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn--ghost" href="#services">프로그램 보기</a>
+    </div>
+  </div>
+
+  <div class="hero__cue" aria-hidden="true">
+    <span class="hero__cueLine"></span>
+    <span class="hero__cueText">SCROLL</span>
+  </div>
+</section>
+
+<!-- ══════════ 2. 키워드 마퀴 ══════════ -->
+<section class="marquee" aria-hidden="true">
+  <div class="marquee__row" data-marquee data-dir="1">
+    <div class="marquee__track" id="mq1"></div>
+  </div>
+  <div class="marquee__row marquee__row--alt" data-marquee data-dir="-1">
+    <div class="marquee__track" id="mq2"></div>
+  </div>
+</section>
+
+<!-- ══════════ 3. 선언 ══════════ -->
+<section class="statement" id="about">
+  <div class="wrap">
+    <p class="statement__label" data-reveal>2020년부터 지금까지</p>
+    <p class="statement__big" data-words>
+      아이들의 밝고 건강한 마음과 즐거움을 책임지는 유아 체육기관입니다.
+    </p>
+    <div class="statement__meta">
+      <p data-reveal data-delay="80">
+        전남 여수 · 순천 · 광양을 거점으로 어린이집과 유치원, 초등학교부터
+        교회 · 아파트단지 · 펜션 · 관공서 행사까지. 부르시면 갑니다.
+        배 타고 섬도 가고, 제주도도 갑니다.
+      </p>
+      <p class="statement__sign" data-reveal data-delay="160">
+        <em>굿프랜드유아체육연구소 &amp; 이벤트</em>
+        <span>대표 황동훈</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 4. 숫자 ══════════ -->
+<section class="stats">
+  <div class="wrap stats__grid">
+    <div class="stat" data-reveal>
+      <span class="stat__num"><b data-count="6">0</b><i>년차</i></span>
+      <span class="stat__label">2020년부터 쉬지 않고</span>
+    </div>
+    <div class="stat" data-reveal data-delay="80">
+      <span class="stat__num"><b data-count="30">0</b><i>여 개 시군</i></span>
+      <span class="stat__label">전남 · 전북 · 경남 · 광주</span>
+    </div>
+    <div class="stat" data-reveal data-delay="160">
+      <span class="stat__num"><b data-count="20">0</b><i>가지+</i></span>
+      <span class="stat__label">물놀이부터 무대 시공까지</span>
+    </div>
+    <div class="stat" data-reveal data-delay="240">
+      <span class="stat__num"><b class="stat__word">당일</b></span>
+      <span class="stat__label">전남권은 당일도 바로 출동</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 5. 프로그램 : 가로 스크롤 ══════════ -->
+<section class="rail" id="services">
+  <div class="rail__sticky">
+    <div class="rail__head">
+      <p class="sec__kicker">PROGRAM</p>
+      <h2 class="sec__title">무엇을 <em>부르실</em> 건가요</h2>
+      <div class="rail__hint" aria-hidden="true">
+        <span class="rail__hintBar"><i id="railBar"></i></span>
+        <span>가로로 흐릅니다</span>
+      </div>
+    </div>
+    <div class="rail__track" id="railTrack">
+
+      <article class="card card--water">
+        <div class="card__img"><img src="assets/img/water3.jpg" alt="에어슬라이드에서 아이가 물로 미끄러져 내려오는 모습" loading="lazy"></div>
+        <div class="card__body">
+          <span class="card__no">01</span>
+          <h3>찾아가는 여름 물놀이</h3>
+          <p>에어풀장 · 에어슬라이드 · 에어수영장을 행사장에 그대로 세웁니다. 설치와 회수, 물 채우고 빼는 것까지 저희가 합니다.</p>
+          <ul class="card__tags">
+            <li>에어풀장</li><li>에어슬라이드</li><li>에어수영장</li><li>워터슬라이드</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card card--bounce">
+        <div class="card__img"><img src="assets/img/bounce.jpg" alt="유치원 운동장에 설치된 대형 장애물 에어바운스에서 노는 아이들" loading="lazy"></div>
+        <div class="card__body">
+          <span class="card__no">02</span>
+          <h3>에어바운스 · 놀이바운스</h3>
+          <p>장애물 바운스, 챌린지 바운스, 대형 에어바운스, 해적 장애물까지. 트램폴린(방방이)과 볼풀장도 함께 나갑니다.</p>
+          <ul class="card__tags">
+            <li>장애물 바운스</li><li>챌린지 바운스</li><li>트램폴린</li><li>볼풀장</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card card--sports">
+        <div class="card__img"><img src="assets/img/sports.jpg" alt="초등학교 운동회에서 계주를 하는 아이들" loading="lazy"></div>
+        <div class="card__body">
+          <span class="card__no">03</span>
+          <h3>운동회 · 체육대회</h3>
+          <p>어린이집·유치원 미니운동회부터 초·중·고, 대학, 기업, 가족 운동회까지. 종목 구성과 레크리에이션 진행을 함께 맡습니다.</p>
+          <ul class="card__tags">
+            <li>가족운동회</li><li>미니운동회</li><li>레크리에이션</li><li>단체 체육대회</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card card--play">
+        <div class="card__img"><img src="assets/img/water1.jpg" alt="행사장에 설치된 대형 에어풀장에서 물놀이하는 아이들" loading="lazy"></div>
+        <div class="card__body">
+          <span class="card__no">04</span>
+          <h3>찾아가는 체험놀이</h3>
+          <p>키즈놀이터와 실내놀이터를 통째로 들고 갑니다. 방학 중 돌봄교실, 문화센터, 체험학습, 축제 체험부스 운영까지.</p>
+          <ul class="card__tags">
+            <li>키즈놀이터</li><li>실내놀이터</li><li>체험학습</li><li>체험부스</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card card--show">
+        <div class="card__img"><img src="assets/img/bubble.jpg" alt="유치원 강당에서 진행되는 버블쇼를 보며 손을 뻗는 아이들" loading="lazy"></div>
+        <div class="card__body">
+          <span class="card__no">05</span>
+          <h3>공연 · 어린이 이벤트</h3>
+          <p>버블쇼, 매직쇼, 인형극. 어린이날 행사와 학예발표회, 가을음악회까지 무대 위에서 벌어지는 일도 함께합니다.</p>
+          <ul class="card__tags">
+            <li>버블쇼</li><li>매직쇼</li><li>인형극</li><li>어린이날 행사</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card card--stage">
+        <div class="card__img card__img--none">
+          <div class="card__glyph" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21V10l9-7 9 7v11"/><path d="M3 21h18"/><path d="M8 21v-6h8v6"/><path d="M12 3v4"/>
+            </svg>
+          </div>
+        </div>
+        <div class="card__body">
+          <span class="card__no">06</span>
+          <h3>행사 전반 <small>2026 확장</small></h3>
+          <p>지역축제와 사회단체·관공서 행사, 이취임식·기공식·준공식까지. 음향 · 조명 · 무대 · 천막을 직접 시공해 통째로 진행합니다.</p>
+          <ul class="card__tags">
+            <li>음향</li><li>조명</li><li>무대</li><li>천막</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 6. 물놀이 스포트라이트 ══════════ -->
+<section class="spot" id="water">
+  <div class="spot__bg" aria-hidden="true">
+    <img src="assets/img/water4.jpg" alt="" data-parallax="0.18">
+  </div>
+  <div class="spot__wrap">
+    <div class="spot__sticky">
+      <p class="sec__kicker sec__kicker--light">SIGNATURE</p>
+      <h2 class="spot__title">찾아가는<br><em>여름 물놀이</em></h2>
+      <p class="spot__lead">운동장에도, 주차장에도, 섬마을 학교에도 수영장이 생깁니다.</p>
+      <a class="btn btn--sun" href="tel:010-9436-4769" data-magnet><span>물놀이 예약 문의</span></a>
+    </div>
+    <ol class="spot__steps">
+      <li data-reveal>
+        <span class="spot__step">STEP 01</span>
+        <h3>장소를 봅니다</h3>
+        <p>운동장, 강당 앞 공터, 아파트 단지, 펜션 마당. 바닥과 물 · 전기 위치를 확인해 어떤 풀장이 들어갈지 정합니다.</p>
+      </li>
+      <li data-reveal data-delay="80">
+        <span class="spot__step">STEP 02</span>
+        <h3>싣고 갑니다</h3>
+        <p>전남 · 전북 · 경남 · 광주는 물론, 배 타고 섬까지. 제주도도 갑니다. 전남권은 당일 출동도 됩니다.</p>
+      </li>
+      <li data-reveal data-delay="160">
+        <span class="spot__step">STEP 03</span>
+        <h3>직접 세웁니다</h3>
+        <p>에어풀장과 에어슬라이드를 펴고 물을 채웁니다. 장비는 시즌 내내 닦아 청결을 유지합니다.</p>
+      </li>
+      <li data-reveal data-delay="240">
+        <span class="spot__step">STEP 04</span>
+        <h3>끝까지 있습니다</h3>
+        <p>안전 관리하며 물놀이를 진행하고, 끝나면 물을 빼고 회수까지. 학교는 손 하나 안 대셔도 됩니다.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ══════════ 7. 연혁 ══════════ -->
+<section class="story" id="story">
+  <div class="wrap">
+    <p class="sec__kicker">HISTORY</p>
+    <h2 class="sec__title">여섯 해 <em>동안</em></h2>
+  </div>
+  <div class="story__wrap">
+    <div class="story__yearBox"><span class="story__year" id="storyYear">2020</span></div>
+    <ol class="story__list">
+      <li class="story__item" data-year="2020" data-reveal>
+        <h3>에어바운스 렌탈로 시작</h3>
+        <p>전남 여수 · 순천 · 광양에서 놀이바운스와 트램폴린 렌탈을 시작했습니다. 어린이집 · 유치원 · 초등학교 찾아가는 체험학습, 버블쇼와 매직쇼도 이때부터.</p>
+      </li>
+      <li class="story__item" data-year="2021" data-reveal>
+        <h3>찾아가는 물놀이 본격화</h3>
+        <p>에어풀장 · 에어슬라이드 · 에어수영장을 갖추고 여름 물놀이를 주력으로. 방학 중 실내놀이터와 키즈놀이터 프로그램을 함께 열었습니다.</p>
+      </li>
+      <li class="story__item" data-year="2022" data-reveal>
+        <h3>전국으로</h3>
+        <p>전남을 넘어 전북 · 경남 · 광주까지. 배를 타고 섬으로, 제주도까지 장비를 싣고 갔습니다.</p>
+      </li>
+      <li class="story__item" data-year="2023" data-reveal>
+        <h3>지역축제 무대에</h3>
+        <p>제5회 순천 호수공원 물총축제, 광양 전어축제, 광영 가야산문화제, 광영동 어린이 한마당. 학교 밖 큰 행사로 자리를 넓혔습니다.</p>
+      </li>
+      <li class="story__item" data-year="2024" data-reveal>
+        <h3>시즌이 길어졌습니다</h3>
+        <p>물놀이 시즌을 9월 초까지 운영. 해마다 첫 예약을 넣어주시는 단골 학교들이 생겼습니다.</p>
+      </li>
+      <li class="story__item" data-year="2026" data-reveal>
+        <h3>행사 전반으로</h3>
+        <p>어린이 행사를 넘어 지역축제 · 사회단체 · 관공서 행사, 이취임식과 기공식 · 준공식까지. 음향 · 조명 · 무대 · 천막을 직접 시공합니다.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ══════════ 8. 출장 지역 ══════════ -->
+<section class="area" id="area">
+  <div class="wrap">
+    <p class="sec__kicker sec__kicker--light">AREA</p>
+    <h2 class="sec__title sec__title--light">부르시면 <em>갑니다</em></h2>
+    <p class="area__lead" data-reveal>거점은 전남 여수 · 순천 · 광양. 아래는 실제로 다녀온 곳들입니다.</p>
+    <ul class="area__chips" id="areaChips"></ul>
+    <p class="area__note" data-reveal>여기 없는 지역이라고 못 가는 게 아닙니다. 일단 전화 주세요.</p>
+  </div>
+</section>
+
+<!-- ══════════ 9. 대상 기관 ══════════ -->
+<section class="who">
+  <div class="wrap">
+    <p class="sec__kicker">CLIENTS</p>
+    <h2 class="sec__title">이런 곳에서 <em>불러주셨습니다</em></h2>
+    <ul class="who__grid">
+      <li data-reveal>어린이집</li>
+      <li data-reveal data-delay="40">유치원 · 병설유치원</li>
+      <li data-reveal data-delay="80">초등학교</li>
+      <li data-reveal data-delay="120">중학교 · 고등학교</li>
+      <li data-reveal data-delay="160">대학교</li>
+      <li data-reveal data-delay="200">교회</li>
+      <li data-reveal data-delay="240">아파트 단지</li>
+      <li data-reveal data-delay="280">펜션 · 리조트</li>
+      <li data-reveal data-delay="320">문화센터 · 돌봄교실</li>
+      <li data-reveal data-delay="360">수련원</li>
+      <li data-reveal data-delay="400">기업 · 청년단체</li>
+      <li data-reveal data-delay="440">관공서 · 지역축제</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════ 10. 문의 ══════════ -->
+<section class="cta" id="contact">
+  <div class="cta__bubbles" aria-hidden="true"></div>
+  <div class="wrap cta__inner">
+    <p class="cta__kicker" data-reveal>예약 · 견적 문의</p>
+    <h2 class="cta__title" data-reveal data-delay="60">
+      날짜만 정해지면<br><em>나머지는 저희가</em>
+    </h2>
+    <a class="cta__phone" href="tel:010-9436-4769" data-reveal data-delay="120" data-magnet>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg>
+      <span>010-9436-4769</span>
+    </a>
+    <p class="cta__person" data-reveal data-delay="180">굿프랜드유아체육연구소 &amp; 이벤트 · 대표 <b>황동훈</b></p>
+    <div class="cta__row" data-reveal data-delay="240">
+      <a class="btn btn--splash" href="sms:010-9436-4769" data-magnet><span>문자로 문의</span></a>
+      <a class="btn btn--ghostLight" href="https://blog.naver.com/goodfriend4769" target="_blank" rel="noopener noreferrer"><span>블로그에서 행사 사진 보기</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <p class="foot__name">굿프랜드유아체육연구소 &amp; 이벤트</p>
+    <p class="foot__meta">대표 황동훈 · 전남 여수 · 순천 · 광양</p>
+    <a class="foot__tel" href="tel:010-9436-4769">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg>
+      <span>010-9436-4769</span>
+    </a>
+    <p class="foot__src">
+      이 페이지의 내용은 운영 블로그
+      <a href="https://blog.naver.com/goodfriend4769" target="_blank" rel="noopener noreferrer">blog.naver.com/goodfriend4769</a>
+      의 공개 게시글을 정리한 것입니다. 게재된 사진은 분위기 전달을 위한 예시 이미지이며, 실제 행사 사진으로 교체할 수 있습니다.
+    </p>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
