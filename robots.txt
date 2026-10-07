@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# AI 검색·학습 크롤러도 막지 않습니다 (홍보가 목적이므로)
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Yeti
+Allow: /
+
+Sitemap: https://brizymedia.github.io/goodfriend-event/sitemap.xml

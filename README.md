@@ -27,8 +27,43 @@ python -m http.server 8815 --directory goodfriend-site
   물놀이(내년 예약). 물놀이는 지우지 않고 뒤로 보내 검색 유입을 지켰다.
 - **보유 장비 갤러리(12장)를 새로 넣었다.** 블로그에 장비 사진이 많아 그대로 강점이 된다.
 - **연락처를 보강했다.** 명함 사진에서 확인한 사무실 번호(061-913-0709),
-  메일(goodfriend4769@naver.com), 주소(전남 광양시 용강3길 15, 나동)를 추가.
+  메일(goodfriend4769@naver.com), 주소(광양시 덕산4길 16)를 추가.
 - **로고를 넣었다.** 블로그 로고 이미지의 검정 배경을 투명 처리해 `assets/img/logo.png`.
+
+## 2026-10-07 2차 작업 — 지역 페이지 · 검색 최적화 · 문의폼
+
+- **주소 변경.** 전남광주통합특별시 광양시 덕산4길 16 (행정통합으로 시도명이 바뀜)
+- **지역 페이지 3개 신설** — `gwangyang.html` · `suncheon.html` · `yeosu.html`.
+  각각 거리·출동 조건·그 지역 실제 행사 기록·지역 FAQ 가 다르게 들어간다.
+  내용이 겹치면 검색에서 손해라 지역마다 다른 글을 썼다.
+- **검색/AI 최적화**
+  - 모든 페이지에 canonical, OG, geo 메타
+  - 구조화 데이터: LocalBusiness · OfferCatalog · FAQPage (대문),
+    Service · BreadcrumbList · FAQPage (지역 페이지)
+  - `sitemap.xml`, `robots.txt`(AI 크롤러 허용), `llms.txt`
+  - 대문에 FAQ 8개 섹션 신설 — AI 검색이 인용하기 좋게 질문/답 형태로
+- **문의폼 신설** — `index.html#form`. Apps Script 로 구글 시트 저장 + 메일 알림.
+- **자산에 버전 붙임** — `style.css?v=20261007`. 고칠 때 이 숫자를 바꾸면
+  방문자 브라우저가 옛 파일을 안 쓴다. 안 바꾸면 고쳐도 반영이 안 보인다.
+
+### 문의폼을 켜려면 (형님이 하셔야 하는 부분)
+
+1. `apps-script/문의-코드.gs` 를 script.google.com 새 프로젝트에 붙여넣기
+2. 스크립트 속성에 `SHEET_ID`(접수용 구글 시트)와 `NOTIFY_TO`(알림 받을 메일) 추가
+3. 배포 → 새 배포 → 웹 앱 → **액세스 권한 「모든 사용자」**
+4. 나오는 `/exec` 주소를 클대리에게 전달 → `assets/app.js` 의
+   `var 문의서버 = ''` 한 곳에 박으면 끝
+
+주소를 넣기 전까지 폼은 "아직 온라인 접수 준비 중입니다. 전화 주세요" 를 띄운다.
+
+### 도메인 (gfevent.co.kr)
+
+DNS 가 살아난 **뒤에** CNAME 을 커밋해야 한다. 먼저 올리면 github.io 주소까지 죽는다.
+DNS 가 붙으면 아래 한 줄로 사이트 안의 모든 주소를 새 도메인으로 바꾼다.
+
+```bash
+grep -rl "brizymedia.github.io/goodfriend-event" . --include=*.html --include=*.xml --include=*.txt   | xargs sed -i 's#https://brizymedia.github.io/goodfriend-event#https://gfevent.co.kr#g'
+```
 
 ## 구조
 

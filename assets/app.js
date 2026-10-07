@@ -331,6 +331,99 @@
     });
   });
 
+  /* ── 15. 문의 폼 ──────────────────────────────────── */
+  /* 형님이 Apps Script 를 배포한 뒤 /exec 주소를 여기 한 곳에만 박으면 된다.
+     비어 있으면 폼 대신 전화 안내를 띄운다. */
+  var 문의서버 = '';
+
+  var form = document.getElementById('inquiryForm');
+  var formMsg = document.getElementById('formMsg');
+
+  function say(text, kind) {
+    if (!formMsg) return;
+    formMsg.textContent = text;
+    formMsg.className = 'form__msg' + (kind ? ' ' + kind : '');
+  }
+
+  if (form) {
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+
+      /* 필수값 직접 확인 (브라우저 기본 말풍선 대신 우리 문구로) */
+      var required = form.querySelectorAll('[required]');
+      var firstBad = null;
+      for (var i = 0; i < required.length; i++) {
+        var el = required[i];
+        var empty = el.type === 'checkbox' ? !el.checked : !String(el.value).trim();
+        el.setAttribute('aria-invalid', empty ? 'true' : 'false');
+        if (empty && !firstBad) firstBad = el;
+      }
+      if (firstBad) {
+        say('별표(*) 표시된 칸을 채워 주세요.', 'bad');
+        firstBad.focus();
+        return;
+      }
+
+      var phone = form.phone.value.replace(/[^0-9]/g, '');
+      if (phone.length < 9) {
+        form.phone.setAttribute('aria-invalid', 'true');
+        say('연락처를 다시 확인해 주세요.', 'bad');
+        form.phone.focus();
+        return;
+      }
+
+      if (!문의서버) {
+        say('아직 온라인 접수 준비 중입니다. 010-9436-4769 로 전화 주세요.', 'bad');
+        return;
+      }
+
+      var data = {};
+      Array.prototype.forEach.call(form.elements, function (el) {
+        if (!el.name) return;
+        data[el.name] = el.type === 'checkbox' ? (el.checked ? 'Y' : 'N') : el.value;
+      });
+      data.page = location.pathname;
+      data.at = new Date().toISOString();
+
+      var btn = form.querySelector('.form__submit');
+      btn.disabled = true;
+      say('보내는 중입니다...', '');
+
+      /* text/plain 이라 사전 요청(preflight)이 없다 — Apps Script 와 잘 맞는다 */
+      fetch(문의서버, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(data)
+      }).then(function (r) { return r.json(); })
+        .then(function (res) {
+          if (res && res.ok) {
+            form.reset();
+            say('접수됐습니다. 확인하는 대로 연락드리겠습니다.', 'ok');
+          } else {
+            say('전송이 안 됐습니다. 010-9436-4769 로 전화 주세요.', 'bad');
+          }
+        })
+        .catch(function () {
+          say('전송이 안 됐습니다. 010-9436-4769 로 전화 주세요.', 'bad');
+        })
+        .then(function () { btn.disabled = false; });
+    });
+
+    /* 입력하면 오류 표시를 지운다 */
+    form.addEventListener('input', function (ev) {
+      if (ev.target.name) ev.target.setAttribute('aria-invalid', 'false');
+    });
+  }
+
+  /* ── 16. FAQ : 하나 열면 나머지는 닫는다 ──────────── */
+  var faqItems = document.querySelectorAll('.faq__item');
+  Array.prototype.forEach.call(faqItems, function (d) {
+    d.addEventListener('toggle', function () {
+      if (!d.open) return;
+      Array.prototype.forEach.call(faqItems, function (o) { if (o !== d) o.open = false; });
+    });
+  });
+
   /* 첫 프레임 계산 */
   requestTick();
 })();
