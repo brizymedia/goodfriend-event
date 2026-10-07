@@ -70,22 +70,33 @@
   }, { threshold: 0.4 });
   document.querySelectorAll('.sec__title, .spot__title').forEach(function (el) { titleIO.observe(el); });
 
-  /* ── 4. 히어로 : 스크롤에 따라 영상 확대 + 흐림 ────── */
-  var heroVideo = document.getElementById('heroVideo');
+  /* ── 4. 히어로 사진 : 스크롤에 따라 살짝 밀려 올라간다 ── */
   var hero = document.getElementById('hero');
-  if (heroVideo && !reduce) {
+  var heroShots = document.querySelectorAll('.hero__shot');
+  if (hero && heroShots.length && !reduce) {
+    /* 등장 애니메이션(animation-fill-mode:forwards)이 인라인 transform 보다
+       우선하므로, 끝난 뒤 애니메이션을 떼고 JS 가 넘겨받는다 */
+    Array.prototype.forEach.call(heroShots, function (el) {
+      el.addEventListener('animationend', function () {
+        el.style.animation = 'none';
+        el.style.opacity = '1';
+      });
+    });
     onFrame(function (y) {
       var h = hero.offsetHeight;
       if (y > h) return;
       var p = clamp(y / h, 0, 1);
-      heroVideo.style.transform = 'scale(' + (1 + p * 0.16).toFixed(4) + ') translateY(' + (p * 34).toFixed(1) + 'px)';
-      heroVideo.style.filter = 'blur(' + (p * 5).toFixed(2) + 'px)';
+      for (var i = 0; i < heroShots.length; i++) {
+        /* 큰 사진은 느리게, 작은 사진은 조금 더 빠르게 — 깊이감 */
+        var rate = i === 0 ? 20 : 42;
+        heroShots[i].style.transform = 'translate3d(0,' + (-p * rate).toFixed(1) + 'px,0)';
+      }
     });
   }
 
   /* ── 5. 키워드 마퀴 : 스크롤 속도에 반응 ──────────── */
-  var WORDS_A = ['찾아가는 물놀이', '에어슬라이드', '에어풀장', '에어바운스', '워터슬라이드'];
-  var WORDS_B = ['운동회', '체육대회', '키즈놀이터', '버블쇼', '매직쇼', '인형극', '체험부스'];
+  var WORDS_A = ['가을 운동회', '체육대회', '에어바운스', '놀이바운스', '레크리에이션'];
+  var WORDS_B = ['장애물 바운스', '트램폴린', '볼풀장', '버블쇼', '매직쇼', '인형극', '체험부스', '음향 · 조명 · 무대'];
 
   function fillTrack(el, words) {
     var html = '';
@@ -249,7 +260,7 @@
 
   /* ── 11. 출장 지역 칩 : 순차 팝인 ─────────────────── */
   var AREAS = [
-    { n: '여수', base: true }, { n: '순천', base: true }, { n: '광양', base: true },
+    { n: '광양', base: true }, { n: '순천', base: true }, { n: '여수', base: true },
     { n: '곡성' }, { n: '구례' }, { n: '보성' }, { n: '화순' }, { n: '장흥' },
     { n: '강진' }, { n: '해남' }, { n: '완도' }, { n: '진도' }, { n: '영암' },
     { n: '무안' }, { n: '함평' }, { n: '영광' }, { n: '장성' }, { n: '신안' },
@@ -275,18 +286,19 @@
     chipIO.observe(chipWrap);
   }
 
-  /* ── 12. 문의 섹션 물방울 ─────────────────────────── */
-  var bubbleBox = document.querySelector('.cta__bubbles');
-  if (bubbleBox && !reduce) {
+  /* ── 12. 문의 섹션 낙엽 ───────────────────────────── */
+  var leafBox = document.querySelector('.cta__leaves');
+  if (leafBox && !reduce) {
     var html = '';
-    for (var i = 0; i < 18; i++) {
-      var size = 10 + Math.random() * 54;
+    for (var i = 0; i < 16; i++) {
+      var w = 9 + Math.random() * 20;
       html += '<i style="left:' + (Math.random() * 100).toFixed(1) + '%;'
-        + 'width:' + size.toFixed(0) + 'px;height:' + size.toFixed(0) + 'px;'
-        + 'animation-duration:' + (9 + Math.random() * 11).toFixed(1) + 's;'
-        + 'animation-delay:' + (-Math.random() * 16).toFixed(1) + 's"></i>';
+        + 'width:' + w.toFixed(0) + 'px;height:' + (w * 0.72).toFixed(0) + 'px;'
+        + 'opacity:' + (0.3 + Math.random() * 0.4).toFixed(2) + ';'
+        + 'animation-duration:' + (11 + Math.random() * 12).toFixed(1) + 's;'
+        + 'animation-delay:' + (-Math.random() * 20).toFixed(1) + 's"></i>';
     }
-    bubbleBox.innerHTML = html;
+    leafBox.innerHTML = html;
   }
 
   /* ── 13. 자석 버튼 ────────────────────────────────── */
