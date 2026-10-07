@@ -334,7 +334,7 @@
   /* ── 15. 문의 폼 ──────────────────────────────────── */
   /* 형님이 Apps Script 를 배포한 뒤 /exec 주소를 여기 한 곳에만 박으면 된다.
      비어 있으면 폼 대신 전화 안내를 띄운다. */
-  var 문의서버 = '';
+  var 문의서버 = 'https://script.google.com/macros/s/AKfycbwHrcu2N6tk-mllEwF3cgJDiB5fQNzZsQ3dLVMBp3BqyyWjos9C91lcvZpOL_Pc7COKvg/exec';
 
   var form = document.getElementById('inquiryForm');
   var formMsg = document.getElementById('formMsg');
