@@ -14,7 +14,7 @@
 - 사무실 전화/팩스: 061-913-0709
 - 이메일: goodfriend4769@naver.com
 - 블로그: https://blog.naver.com/goodfriend4769
-- 홈페이지: https://brizymedia.github.io/goodfriend-event/
+- 홈페이지: https://gfevent.co.kr/
 - 영업 시작: 2020년
 
 ## 무엇을 하는 업체인가
@@ -96,10 +96,10 @@
 
 ## 페이지 목록
 
-- [전체 소개](https://brizymedia.github.io/goodfriend-event/)
-- [광양 운동회·에어바운스](https://brizymedia.github.io/goodfriend-event/gwangyang.html)
-- [순천 운동회·에어바운스](https://brizymedia.github.io/goodfriend-event/suncheon.html)
-- [여수 운동회·에어바운스](https://brizymedia.github.io/goodfriend-event/yeosu.html)
+- [전체 소개](https://gfevent.co.kr/)
+- [광양 운동회·에어바운스](https://gfevent.co.kr/gwangyang.html)
+- [순천 운동회·에어바운스](https://gfevent.co.kr/suncheon.html)
+- [여수 운동회·에어바운스](https://gfevent.co.kr/yeosu.html)
 - [운영 블로그](https://blog.naver.com/goodfriend4769)
 
 ## 참고

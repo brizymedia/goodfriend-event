@@ -17,4 +17,4 @@ Allow: /
 User-agent: Yeti
 Allow: /
 
-Sitemap: https://brizymedia.github.io/goodfriend-event/sitemap.xml
+Sitemap: https://gfevent.co.kr/sitemap.xml

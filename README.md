@@ -58,11 +58,15 @@ python -m http.server 8815 --directory goodfriend-site
 
 ### 도메인 (gfevent.co.kr)
 
-DNS 가 살아난 **뒤에** CNAME 을 커밋해야 한다. 먼저 올리면 github.io 주소까지 죽는다.
-DNS 가 붙으면 아래 한 줄로 사이트 안의 모든 주소를 새 도메인으로 바꾼다.
+**2026-10-07 연결 완료.** 네임서버는 클릭도메인, A 레코드가 GitHub Pages 를 가리킨다.
+`CNAME` 파일에 `gfevent.co.kr` 이 들어 있고 사이트 안의 모든 주소(canonical ·
+구조화 데이터 · sitemap.xml · llms.txt)도 이 도메인으로 바꿔 두었다.
+
+주의: CNAME 은 **DNS 가 살아난 뒤에** 커밋해야 한다. 먼저 올리면 github.io 주소까지 죽는다.
+도메인을 또 바꿀 일이 생기면 아래 한 줄로 사이트 안 주소를 일괄 교체한다.
 
 ```bash
-grep -rl "brizymedia.github.io/goodfriend-event" . --include=*.html --include=*.xml --include=*.txt   | xargs sed -i 's#https://brizymedia.github.io/goodfriend-event#https://gfevent.co.kr#g'
+grep -rl "gfevent.co.kr" . --include=*.html --include=*.xml --include=*.txt   | xargs sed -i 's#https://gfevent.co.kr#https://새도메인#g'
 ```
 
 ## 구조
